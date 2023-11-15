@@ -83,7 +83,7 @@ function ImageViewing({
     (isScaled: boolean) => {
       // @ts-ignore
       imageList?.current?.setNativeProps({ scrollEnabled: !isScaled });
-      toggleBarsVisible(!isScaled);
+      // toggleBarsVisible(!isScaled);
     },
     [imageList]
   );
