@@ -93,15 +93,7 @@ function ImageViewing({
   }
 
   return (
-    <Modal
-      transparent={presentationStyle === "overFullScreen"}
-      visible={visible}
-      presentationStyle={presentationStyle}
-      animationType={animationType}
-      onRequestClose={onRequestCloseEnhanced}
-      supportedOrientations={["portrait"]}
-      hardwareAccelerated
-    >
+    <View style={{flex:1}}>
       <StatusBarManager presentationStyle={presentationStyle} />
       <View style={[styles.container, { opacity, backgroundColor }]}>
         <Animated.View style={[styles.header, { transform: headerTransform }]}>
@@ -162,7 +154,7 @@ function ImageViewing({
           </Animated.View>
         )}
       </View>
-    </Modal>
+    </View>
   );
 }
 
