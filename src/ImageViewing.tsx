@@ -40,7 +40,7 @@ type Props = {
   swipeToCloseEnabled?: boolean;
   doubleTapToZoomEnabled?: boolean;
   delayLongPress?: number;
-  HeaderComponent?: ComponentType<{ imageIndex: number }>;
+  HeaderComponent?: ComponentType<{ imageIndex: number, onRequestClose: () => void }>;
   FooterComponent?: ComponentType<{ imageIndex: number }>;
 };
 
@@ -100,6 +100,7 @@ function ImageViewing({
           {typeof HeaderComponent !== "undefined" ? (
             React.createElement(HeaderComponent, {
               imageIndex: currentImageIndex,
+              onRequestClose: onRequestCloseEnhanced
             })
           ) : (
             <ImageDefaultHeader onRequestClose={onRequestCloseEnhanced} />
